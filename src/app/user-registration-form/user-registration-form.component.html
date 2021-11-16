@@ -2,6 +2,7 @@
   <mat-card-header>
     <mat-card-title>Sign Up!</mat-card-title>
   </mat-card-header>
+
   <mat-card-content>
     <form>
       <mat-form-field>
@@ -14,6 +15,7 @@
           required
         />
       </mat-form-field>
+
       <mat-form-field>
         <input
           matInput
@@ -24,6 +26,7 @@
           required
         />
       </mat-form-field>
+
       <mat-form-field>
         <input
           matInput
@@ -34,11 +37,12 @@
           required
         />
       </mat-form-field>
+
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Birthday"
-          type="date"
+          type="text"
           placeholder="Birthday"
           name="Birthday"
         />

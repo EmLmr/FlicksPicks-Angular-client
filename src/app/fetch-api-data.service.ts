@@ -22,17 +22,18 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
 
   //api call for user registration endpoint
-  public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+  public userRegistration(userData: any): Observable<any> {
+    // console.log(userData);
     return this.http
-      .post(apiUrl + 'users', userDetails)
+      .post(apiUrl + 'users', userData)
       .pipe(catchError(this.handleError));
   }
 
   //api call for user login endpoint
-  public userLogin(userDetails: any): Observable<any> {
+  public userLogin(userData: any): Observable<any> {
+    // console.log(userData);
     return this.http
-      .post(apiUrl + 'users', userDetails)
+      .post(apiUrl + 'login', userData)
       .pipe(catchError(this.handleError));
   }
 
@@ -114,9 +115,9 @@ export class FetchApiDataService {
   }
 
   //api call to edit user info, by username
-  editUser(userDetails: any): Observable<any> {
+  editUser(userData: any): Observable<any> {
     return this.http
-      .put(apiUrl + `users/${username}`, userDetails, {
+      .put(apiUrl + `users/${username}`, userData, {
         headers: new HttpHeaders({
           Authorization: 'Bearer' + token,
         }),
