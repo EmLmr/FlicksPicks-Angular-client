@@ -8,10 +8,14 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class MovieCardComponent {
   movies: any[] = []; //stores the movies coming from the api
+  directors: any[] = []; //stores the directors coming from the api
+  genres: any[] = []; //stores the genres coming from the api
   constructor(public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
     this.getMovies();
+    this.getDirectors();
+    this.getGenres();
   }
 
   //fetch movies from the api
@@ -20,6 +24,24 @@ export class MovieCardComponent {
       this.movies = response;
       console.log(this.movies);
       return this.movies;
+    });
+  }
+
+  //fetch directors from the api
+  getDirectors(): void {
+    this.fetchApiData.getAllDirectors().subscribe((response: any) => {
+      this.directors = response;
+      console.log(this.directors);
+      return this.directors;
+    });
+  }
+
+  //fetch genres from the api
+  getGenres(): void {
+    this.fetchApiData.getAllGenres().subscribe((response: any) => {
+      this.genres = response;
+      console.log(this.genres);
+      return this.genres;
     });
   }
 }
