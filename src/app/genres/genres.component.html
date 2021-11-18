@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div id="main-container">
+  <div id="content">
+    <h1>Genres</h1>
+    <div class="genres-container">
+      <div class="genre-card-wrapper" *ngFor="let genre of genres">
+        <mat-card class="items mat-elevation-z0">
+          <mat-card-header>
+            <mat-card-title class="title">{{ genre.Gname }}</mat-card-title>
+            <mat-card-content>
+              {{ genre.Gdescription }}
+            </mat-card-content>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

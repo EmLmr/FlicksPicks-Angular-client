@@ -27,10 +27,12 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { SynopsisDialogComponent } from './synopsis-dialog/synopsis-dialog.component';
 import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GenresComponent } from './genres/genres.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'genres', component: GenresComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
     SynopsisDialogComponent,
     GenreDialogComponent,
     NavbarComponent,
+    GenresComponent,
   ],
   imports: [
     BrowserModule,
