@@ -104,7 +104,7 @@ export class FetchApiDataService {
   }
 
   //api call to get user, by username
-  getUser(): Observable<any> {
+  getUser(username: any): Observable<any> {
     return this.http
       .get(apiUrl + `users/${username}`, {
         headers: new HttpHeaders({
@@ -161,7 +161,7 @@ export class FetchApiDataService {
   //delete movie from favorites
   deleteFromFavorites(_id: string): Observable<any> {
     return this.http
-      .get(apiUrl + `users/${username}/movies/${_id}`, {
+      .delete(apiUrl + `users/${username}/movies/${_id}`, {
         headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));

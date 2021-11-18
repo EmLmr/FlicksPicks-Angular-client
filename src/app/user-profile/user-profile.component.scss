@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title,
+.favorites-title,
+.favorites-card-title {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  color: #fff4e6;
+  padding: 2rem;
+  margin: 0;
+}
+
+/*USER INFO*/
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.1rem;
+}
+
+.content {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: #2e2e2e;
+  color: #fff4e6;
+  text-align: center;
+}
+
+.user-delete {
+  background-color: #ff0075;
+  color: #fff;
+  margin: 10px;
+}
+
+/*FAVORITE MOVIES*/
+.favorites-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 20px;
+  max-width: 100%;
+  background-color: #2e2e2e;
+}
+
+.favorites-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
+  width: 250px;
+  height: 420px;
+  background-color: black;
+  color: #fff4e6;
+  margin: 20px;
+  padding: 5px;
+}
+
+.favorites-title {
+  font-size: 1.5rem;
+}
+
+.favorites-card-title {
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.favorite-delete {
+  color: #ff0075;
+  cursor: pointer;
+  right: -15px;
+  top: 10px;
+  position: absolute;
+  padding: 0;
+  width: 50px;
+  font-size: xx-large;
+}
+
+.image {
+  width: 150px;
+  height: 200px;
+}
+
+@media (max-width: 500px) {
+  .user-info {
+    width: 100%;
+    margin: 10px;
+  }
+}

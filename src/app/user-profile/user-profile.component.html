@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="user-container">
+    <mat-card class="user-info mat-elevation-z0">
+      <mat-card-header>
+        <mat-card-title class="title">User information:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="content">
+        <div>Username: {{ user.Username }}</div>
+        <div>Email: {{ user.Email }}</div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button class="user-delete" (click)="deleteAccount()">
+          Delete Account
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <!--display  list of favorite movies-->
+  <div class="favorites-title">Favorite movies:</div>
+  <div class="favorites-list">
+    <mat-card *ngFor="let movie of favoriteMovies" class="favorites-item">
+      <mat-card-header>
+        <mat-card-title class="favorites-card-title">{{
+          movie.Title
+        }}</mat-card-title>
+      </mat-card-header>
+
+      <img class="image" src="{{ movie.ImageURL }}" alt="{{ movie.Title }}" />
+      <mat-card-actions>
+        <mat-icon
+          matTooltip="Delete movie from favorites"
+          class="favorite-delete"
+          aria-label="Delete movie from list of favorites"
+          (click)="deleteFromFavorites(movie._id, movie.Title)"
+        >
+          delete_outline
+        </mat-icon>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
