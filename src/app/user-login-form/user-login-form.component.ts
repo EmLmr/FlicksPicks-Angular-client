@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.scss'],
 })
 export class UserLoginFormComponent implements OnInit {
+  isLoading = false;
+
   @Input() userData = { Username: '', Password: '' };
 
   constructor(
@@ -26,11 +28,13 @@ export class UserLoginFormComponent implements OnInit {
 
   //send form input to backend
   loginUser(): void {
+    this.isLoading = true;
     this.fetchApiData.userLogin(this.userData).subscribe(
       (response) => {
         //store user data to local storage
         localStorage.setItem('user', response.user.Username);
         localStorage.setItem('token', response.token);
+        this.isLoading = false;
         //close the modal on success
         this.dialogRef.close();
         this.snackBar.open('Log in successful!', 'OK', {
@@ -39,6 +43,7 @@ export class UserLoginFormComponent implements OnInit {
         this.router.navigate(['movies']);
       },
       (response) => {
+        this.isLoading = false;
         this.snackBar.open(response, 'OK', {
           duration: 2000,
         });
