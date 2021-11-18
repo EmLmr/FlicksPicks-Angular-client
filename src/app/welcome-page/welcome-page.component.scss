@@ -8,17 +8,17 @@ p {
   color: white;
 }
 
-#logo {
-  width: 250px;
-  margin: 1.5rem;
-}
-
 .main-page {
   height: 100%;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+
+.logo-welcome {
+  width: 250px;
+  margin: 1.5rem;
 }
 
 .loginBtn,

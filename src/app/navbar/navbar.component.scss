@@ -1,0 +1,82 @@
+#logo {
+  width: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  background-color: #2e2e2e;
+  margin: 1rem;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.button {
+  font-size: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#logout-btn {
+  background-color: #4717f6;
+}
+
+.button:hover {
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .links {
+    align-items: center;
+    justify-content: center;
+  }
+  .button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 250px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 200px;
+    min-width: 170px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+}
