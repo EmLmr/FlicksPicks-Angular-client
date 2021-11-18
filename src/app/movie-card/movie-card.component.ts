@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
+import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -14,7 +15,7 @@ import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.comp
 export class MovieCardComponent {
   movies: any[] = []; //stores the movies coming from the api
   directors: any[] = []; //stores the directors coming from the api
-  genres: any[] = []; //stores the genres coming from the api
+
   constructor(
     public fetchApiData: FetchApiDataService,
     public router: Router,
@@ -24,7 +25,6 @@ export class MovieCardComponent {
   ngOnInit(): void {
     this.getMovies();
     this.getDirectors();
-    this.getGenres();
   }
 
   //fetch movies from the api
@@ -45,21 +45,21 @@ export class MovieCardComponent {
     });
   }
 
-  //fetch genres from the api
-  getGenres(): void {
-    this.fetchApiData.getAllGenres().subscribe((response: any) => {
-      this.genres = response;
-      console.log(this.genres);
-      return this.genres;
-    });
-  }
-
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisDialogComponent, {
       panelClass: 'custom-dialog-container',
       data: {
         Name: title,
         Description: description,
+      },
+    });
+  }
+
+  openGenreDialog(gname: string, gdescription: string): void {
+    this.dialog.open(GenreDialogComponent, {
+      data: {
+        Gname: gname,
+        Gdescription: gdescription,
       },
     });
   }
