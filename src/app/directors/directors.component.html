@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div id="main-container">
+  <div id="content">
+    <h1>Directors</h1>
+    <div class="directors-container">
+      <div class="director-card-wrapper" *ngFor="let director of directors">
+        <mat-card class="items mat-elevation-z0">
+          <mat-card-header>
+            <mat-card-title class="title">{{ director.Name }}</mat-card-title>
+            <mat-card-content>
+              {{ director.Bio }}
+            </mat-card-content>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
