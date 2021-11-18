@@ -1,19 +1,25 @@
 <div class="main-page">
-  <h1>Welcome to FlicksPicks!</h1>
-  <button
-    mat-raised-button
-    (click)="openUserRegistrationDialog()"
-    style="margin-right: 10px"
-    color="primary"
-  >
-    Sign Up
-  </button>
+  <h1>Welcome to</h1>
+  <img
+    src="assets/img/logo.png"
+    alt="The FlicksPicks logo in neon lights"
+    id="logo"
+  />
 
   <button
     mat-raised-button
+    class="registerBtn"
+    (click)="openUserRegistrationDialog()"
+    style="margin-right: 10px"
+  >
+    Sign Up
+  </button>
+  <p>Already have an account?</p>
+  <button
+    mat-raised-button
+    class="loginBtn"
     (click)="openUserLoginDialog()"
     style="margin-right: 10px"
-    color="primary"
   >
     Login
   </button>

@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
-// import { MovieCardComponent } from './movie-card/movie-card.component';
 
 @Component({
   selector: 'app-welcome-page',
@@ -27,10 +26,4 @@ export class WelcomePageComponent implements OnInit {
       width: '280px',
     });
   }
-  /* //will show all movies when the "All Movies" button is clicked
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '500px',
-    });
-  } */
 }

@@ -1,0 +1,38 @@
+h1 {
+  color: white;
+  font-size: 3em;
+  font-family: "Oswald", sans-serif;
+}
+
+p {
+  color: white;
+}
+
+#logo {
+  width: 250px;
+  margin: 1.5rem;
+}
+
+.main-page {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginBtn,
+.registerBtn {
+  color: white;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.loginBtn {
+  background-color: #4717f6;
+}
+
+.registerBtn {
+  margin: 2rem 0;
+  background-color: #ff0075;
+}
