@@ -39,9 +39,13 @@ export class UserLoginFormComponent implements OnInit {
         this.router.navigate(['movies']);
       },
       (response) => {
-        this.snackBar.open(response, 'OK', {
-          duration: 2000,
-        });
+        this.snackBar.open(
+          'The user and password combination does not exist. Please try again.',
+          'OK',
+          {
+            duration: 2000,
+          }
+        );
       }
     );
   }

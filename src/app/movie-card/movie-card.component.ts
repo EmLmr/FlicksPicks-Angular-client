@@ -15,7 +15,6 @@ import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
 })
 export class MovieCardComponent {
   movies: any[] = []; //stores the movies coming from the api
-  // directors: any[] = []; //stores the directors coming from the api
   favorites: any[] = [];
 
   constructor(
@@ -27,7 +26,6 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
-    // this.getDirectors();
     this.getUserFavorites();
   }
 
@@ -40,15 +38,7 @@ export class MovieCardComponent {
     });
   }
 
-  // //fetch directors from the api
-  // getDirectors(): void {
-  //   this.fetchApiData.getAllDirectors().subscribe((response: any) => {
-  //     this.directors = response;
-  //     console.log(this.directors);
-  //     return this.directors;
-  //   });
-  // }
-
+  //open dialog to get movie synopsis
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisDialogComponent, {
       panelClass: 'custom-dialog-container',
@@ -59,6 +49,7 @@ export class MovieCardComponent {
     });
   }
 
+  //open dialog to get genre info
   openGenreDialog(gname: string, gdescription: string): void {
     this.dialog.open(GenreDialogComponent, {
       data: {
@@ -68,6 +59,7 @@ export class MovieCardComponent {
     });
   }
 
+  //get user favorite movies based off user info stored in localStorage
   getUserFavorites(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
@@ -76,6 +68,7 @@ export class MovieCardComponent {
     });
   }
 
+  //add movie to favorites
   addToFavorites(id: string, Title: string): void {
     this.fetchApiData.addToFavorites(id).subscribe((res: any) => {
       this.snackBar.open(`"${Title}" added to favorites.`, 'OK', {
@@ -85,6 +78,7 @@ export class MovieCardComponent {
     });
   }
 
+  //delete movie from favorites
   deleteFromFavorites(id: string, Title: string): void {
     this.fetchApiData.deleteFromFavorites(id).subscribe((resp: any) => {
       console.log(resp);
@@ -95,6 +89,7 @@ export class MovieCardComponent {
     });
   }
 
+  //toggle "favorite" status for a movie
   setFavoriteStatus(id: any): any {
     if (this.favorites.includes(id)) {
       return true;

@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //route to user profile
   toProfile(): void {
     this.router
       .navigate(['/profile'])
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit {
       .catch(console.error);
   }
 
+  //route to Movies view (main page)
   toMovies(): void {
     this.router
       .navigate(['/movies'])
@@ -25,6 +27,7 @@ export class NavbarComponent implements OnInit {
       .catch(console.error);
   }
 
+  //route to Directors view
   toDirectors(): void {
     this.router
       .navigate(['/directors'])
@@ -32,6 +35,7 @@ export class NavbarComponent implements OnInit {
       .catch(console.error);
   }
 
+  //route to Genres view
   toGenres(): void {
     this.router
       .navigate(['/genres'])
@@ -39,6 +43,7 @@ export class NavbarComponent implements OnInit {
       .catch(console.error);
   }
 
+  //route to home/main page
   backToHome(): void {
     this.router
       .navigate(['/movies'])
@@ -46,6 +51,7 @@ export class NavbarComponent implements OnInit {
       .catch(console.error);
   }
 
+  //log out user and redirect to Welcome page
   logOut(): void {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
