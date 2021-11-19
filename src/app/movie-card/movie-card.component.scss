@@ -12,7 +12,7 @@
 }
 
 .favorites-icon {
-  color: white;
+  color: #ff0075;
 }
 
 .actions {
@@ -37,20 +37,12 @@
   text-align: center;
   margin: 1rem;
   background-color: black;
-  color: #c04a41;
   width: 300px;
   height: 400px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
     transform: scale(1.05);
-  }
-}
-
-.favorites {
-  color: rgba(red, 0.75);
-  &:hover {
-    transform: scale(1.1);
   }
 }
 
@@ -65,10 +57,6 @@
   margin-top: 5px;
   padding: 10px;
   color: white;
-}
-
-.subtitle {
-  color: #fff4e6;
 }
 
 @media (max-width: 950px) {

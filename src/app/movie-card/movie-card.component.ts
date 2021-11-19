@@ -76,23 +76,9 @@ export class MovieCardComponent {
     });
   }
 
-  // addToFavorites(movieId: any) {
-  //   console.log(movieId);
-  //   this.fetchApiData.addToFavorites(movieId).subscribe((resp: any) => {
-  //     console.log(resp);
-  //     this.snackBar.open(
-  //       `The selected movie has been added to your favorites.`,
-  //       'OK',
-  //       {
-  //         duration: 3000,
-  //       }
-  //     );
-  //     this.getUserFavorites();
-  //   });
-  // }
   addToFavorites(id: string, Title: string): void {
     this.fetchApiData.addToFavorites(id).subscribe((res: any) => {
-      this.snackBar.open(`"${Title}" has been added to your favorites`, 'OK', {
+      this.snackBar.open(`"${Title}" added to favorites.`, 'OK', {
         duration: 3000,
       });
       return this.getUserFavorites();
@@ -102,13 +88,9 @@ export class MovieCardComponent {
   deleteFromFavorites(id: string, Title: string): void {
     this.fetchApiData.deleteFromFavorites(id).subscribe((resp: any) => {
       console.log(resp);
-      this.snackBar.open(
-        `"${Title}" has been removed from your favorites.`,
-        'OK',
-        {
-          duration: 3000,
-        }
-      );
+      this.snackBar.open(`"${Title}" removed from favorites.`, 'OK', {
+        duration: 3000,
+      });
       this.getUserFavorites();
     });
   }
