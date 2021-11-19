@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EditUserProfileComponent } from '../edit-user-profile/edit-user-profile.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -60,6 +61,11 @@ export class UserProfileComponent implements OnInit {
         window.location.reload();
       }, 1000);
     });
+  }
+
+  //open dialog to edit user info
+  openEditUserProfileDialog(): void {
+    this.dialog.open(EditUserProfileComponent);
   }
 
   //delete user account

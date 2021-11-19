@@ -7,9 +7,27 @@
       </mat-card-header>
       <mat-card-content class="content">
         <div>Username: {{ user.Username }}</div>
+      </mat-card-content>
+      <mat-card-content class="content">
         <div>Email: {{ user.Email }}</div>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-content class="content">
+        <div>Password: **********</div>
+      </mat-card-content>
+      <mat-card-content class="content">
+        <div>Date of birth: {{ user.Birthday }}</div>
+      </mat-card-content>
+      <mat-card-actions class="edit-btn">
+        <button
+          mat-raised-button
+          class="user-edit"
+          (click)="openEditUserProfileDialog()"
+        >
+          Edit Profile
+        </button>
+      </mat-card-actions>
+      <div class="delete-title">Delete your account?</div>
+      <mat-card-actions class="delete-btn">
         <button mat-raised-button class="user-delete" (click)="deleteAccount()">
           Delete Account
         </button>

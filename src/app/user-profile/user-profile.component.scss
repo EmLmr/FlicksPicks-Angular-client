@@ -1,3 +1,7 @@
+button {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,7 +9,8 @@
 
 .title,
 .favorites-title,
-.favorites-card-title {
+.favorites-card-title,
+.delete-title {
   text-align: center;
   font-family: "Oswald", sans-serif;
   color: #fff4e6;
@@ -44,10 +49,19 @@
   text-align: center;
 }
 
+.edit-btn {
+  margin-bottom: 20px;
+}
+
+.user-edit {
+  background-color: #4717f6;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
 .user-delete {
   background-color: #ff0075;
   color: #fff;
-  margin: 10px;
 }
 
 /*FAVORITE MOVIES*/
@@ -76,7 +90,8 @@
   padding: 5px;
 }
 
-.favorites-title {
+.favorites-title,
+.delete-title {
   font-size: 1.5rem;
 }
 
