@@ -31,7 +31,7 @@ export class MovieCardComponent {
     this.getUserFavorites();
   }
 
-  //fetch genres from the API
+  //fetch all movie from the API
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;

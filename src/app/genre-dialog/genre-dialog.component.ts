@@ -20,6 +20,7 @@ export class GenreDialogComponent implements OnInit {
   getGenres(): void {
     this.fetchApiData.getAllGenres().subscribe((response: any) => {
       this.genres = response;
+      //this.genres[0] = response; //returns horror, the first genre in the array
       console.log(this.genres);
       return this.genres;
     });

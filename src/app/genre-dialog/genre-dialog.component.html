@@ -1,7 +1,9 @@
-<div class="genre-dialog-wrapper" *ngFor="let genre of genres">
+<div class="genre-dialog-wrapper">
   <button mat-icon-button color="dark" [mat-dialog-close]="true">
     <mat-icon>close</mat-icon>
   </button>
-  <h2>{{ genre[0].Gname }}</h2>
-  <p>{{ genre[0].Gdescription }}</p>
+  <div class="genre-details" *ngFor="let genre of genres; let i = index">
+    <h2>{{ genre.Gname }}</h2>
+    <p>{{ genre.Gdescription }}</p>
+  </div>
 </div>
