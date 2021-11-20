@@ -14,7 +14,9 @@ import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
   styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent {
-  movies: any[] = []; //stores the movies coming from the api
+  //stores the movies coming from the API
+  movies: any[] = [];
+  //stores the favorite movies coming from the API
   favorites: any[] = [];
 
   constructor(
@@ -29,7 +31,7 @@ export class MovieCardComponent {
     this.getUserFavorites();
   }
 
-  //fetch movies from the api
+  //fetch genres from the API
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;

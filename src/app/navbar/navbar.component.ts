@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit {
       .catch(console.error);
   }
 
-  //route to home/main page
+  //route to main page (Movies view)
   backToHome(): void {
     this.router
       .navigate(['/movies'])

@@ -14,7 +14,13 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any[] = [];
   favoriteMovies: any[] = [];
-  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
+
+  @Input() userData = {
+    Username: '',
+    Password: '',
+    Email: '',
+    Birthday: '',
+  };
 
   constructor(
     public dialog: MatDialog,

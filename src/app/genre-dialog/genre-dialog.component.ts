@@ -7,14 +7,16 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./genre-dialog.component.scss'],
 })
 export class GenreDialogComponent implements OnInit {
-  genres: any[] = []; //stores the genres coming from the api
+  //store genres coming from the API
+  genres: any[] = [];
+
   constructor(public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
     this.getGenres();
   }
 
-  //fetch genres from the api
+  //fetch genres from the API
   getGenres(): void {
     this.fetchApiData.getAllGenres().subscribe((response: any) => {
       this.genres = response;

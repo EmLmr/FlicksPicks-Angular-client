@@ -13,7 +13,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.scss'],
 })
 export class UserLoginFormComponent implements OnInit {
-  @Input() userData = { Username: '', Password: '' };
+  //required input fields to login user
+  @Input() userData = {
+    Username: '',
+    Password: '',
+  };
 
   constructor(
     public fetchApiData: FetchApiDataService,

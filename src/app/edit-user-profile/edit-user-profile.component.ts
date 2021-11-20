@@ -9,7 +9,7 @@ const username = localStorage.getItem('user');
   styleUrls: ['./edit-user-profile.component.scss'],
 })
 export class EditUserProfileComponent implements OnInit {
-  //required input fields for user info update
+  //required input fields to update user info
   @Input() userData = {
     Username: username,
     Password: '',
