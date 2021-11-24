@@ -10,7 +10,9 @@
         mat-button
         id="genre-btn"
         color="primary"
-        (click)="openGenreDialog(movie.Genre.Gname, movie.Genre.Gdescription)"
+        (click)="
+          openGenreDialog(movie.Genre[0].Gname, movie.Genre[0].Gdescription)
+        "
       >
         Genre
       </button>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
@@ -10,7 +11,16 @@ export class GenreDialogComponent implements OnInit {
   //store genres coming from the API
   genres: any[] = [];
 
-  constructor(public fetchApiData: FetchApiDataService) {}
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      gname: string;
+      gdescription: string;
+    }
+  ) {
+    console.log(data);
+  }
 
   ngOnInit(): void {
     this.getGenres();

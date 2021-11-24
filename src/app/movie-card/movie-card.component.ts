@@ -17,6 +17,8 @@ import { DirectorDialogComponent } from '../director-dialog/director-dialog.comp
 export class MovieCardComponent {
   //stores the movies coming from the API
   movies: any[] = [];
+  //stores the movies coming from the API
+  genres: any[] = [];
   //stores the favorite movies coming from the API
   favorites: any[] = [];
 
