@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
 import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
+import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -57,6 +58,18 @@ export class MovieCardComponent {
       data: {
         Gname: gname,
         Gdescription: gdescription,
+      },
+    });
+  }
+
+  //open dialog to get director info
+  openDirectorDialog(name: string): void {
+    this.dialog.open(DirectorDialogComponent, {
+      panelClass: 'custom-dialog-container',
+      width: '70%',
+      height: '70%',
+      data: {
+        Name: name,
       },
     });
   }

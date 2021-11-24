@@ -30,6 +30,7 @@ import { GenresComponent } from './genres/genres.component';
 import { DirectorsComponent } from './directors/directors.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     DirectorsComponent,
     UserProfileComponent,
     EditUserProfileComponent,
+    DirectorDialogComponent,
   ],
   imports: [
     BrowserModule,

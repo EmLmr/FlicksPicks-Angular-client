@@ -15,7 +15,14 @@
         Genre
       </button>
 
-      <button mat-button id="director-btn" color="primary">Director</button>
+      <button
+        mat-button
+        id="director-btn"
+        color="primary"
+        (click)="openDirectorDialog(movie.Director[0].Name)"
+      >
+        Director
+      </button>
 
       <button
         mat-button
