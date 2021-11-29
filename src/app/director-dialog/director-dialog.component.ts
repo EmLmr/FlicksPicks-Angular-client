@@ -14,11 +14,9 @@ export class DirectorDialogComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      Name: string;
+      _id: string;
     }
-  ) {
-    console.log(data);
-  }
+  ) {}
 
   ngOnInit(): void {
     this.getDirectorDetails();
@@ -27,7 +25,6 @@ export class DirectorDialogComponent implements OnInit {
   getDirectorDetails(): void {
     this.fetchApiData.getAllDirectors().subscribe((response: any) => {
       this.directors = response;
-      console.log(this.directors);
       return this.directors;
     });
   }

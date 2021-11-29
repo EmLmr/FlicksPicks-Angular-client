@@ -1,16 +1,16 @@
-<div id="body">
-  <div id="main-content">
+<div class="director-dialog-wrapper">
+  <button mat-icon-button color="dark" [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div id="main-content" *ngFor="let director of directors">
     <mat-dialog-content>
-      <h1>
-        {{ data.Name }}
+      <h1 *ngIf="data._id == director._id" class="dialog-title">
+        {{ director.Name }}
       </h1>
-      <div *ngFor="let director of directors">
-        <div *ngIf="data.Name == director.Name">
-          <p>
-            {{ director.Bio }}
-          </p>
-          <!-- <p class="p2">Born: {{ director.Born.slice(4, 15) }}</p> -->
-        </div>
+      <div>
+        <p *ngIf="data._id == director._id" class="dialog-definition">
+          {{ director.Bio }}
+        </p>
       </div>
     </mat-dialog-content>
   </div>

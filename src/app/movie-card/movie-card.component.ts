@@ -66,13 +66,12 @@ export class MovieCardComponent {
   }
 
   //open dialog to get director info
-  openDirectorDialog(name: string): void {
+  openDirectorDialog(_id: string): void {
     this.dialog.open(DirectorDialogComponent, {
       panelClass: 'custom-dialog-container',
-      width: '70%',
-      height: '70%',
+      width: '50%',
       data: {
-        Name: name,
+        _id: _id,
       },
     });
   }
