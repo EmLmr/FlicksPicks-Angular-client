@@ -128,7 +128,7 @@ export class FetchApiDataService {
   /**
    * Get user; by username
    * @param username - username
-   * @returns Object - user data
+   * @returns object containing user data
    */
   getUser(username: any): Observable<any> {
     return this.http
@@ -172,7 +172,7 @@ export class FetchApiDataService {
   /**
    * Get favorite movies
    * @param username - username automatically extracted from login data
-   * @returns Array - favorite movies
+   * @returns array of favorite movies
    */
   getFavorites(): Observable<any> {
     return this.http
@@ -214,13 +214,21 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //non-typed response extraction
+  /**
+   * Non-typed response extraction
+   * @param res - the response to extract
+   * @returns the body of the response
+   */
   private extractResponseData(res: Response | Object): any {
     const body = res;
     return body || {};
   }
 
-  //error-handling
+  /**
+   * Handles the error passed as argument
+   * @param error the error to handle
+   * @returns the handled error
+   */
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
