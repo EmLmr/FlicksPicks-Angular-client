@@ -47,6 +47,7 @@ export class MovieCardComponent {
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisDialogComponent, {
       panelClass: 'custom-dialog-container',
+      width: '50%',
       data: {
         Name: title,
         Description: description,

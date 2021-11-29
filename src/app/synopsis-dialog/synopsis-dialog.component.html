@@ -1,12 +1,17 @@
-<div id="body">
+<div class="synopsis-dialog-wrapper">
+  <button mat-icon-button color="dark" [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </button>
   <div id="main-content">
     <mat-dialog-content>
-      <h1>
+      <h1 class="dialog-title">
         {{ data.Name }}
       </h1>
-      <p>
-        {{ data.Description }}
-      </p>
+      <div>
+        <p class="dialog-definition">
+          {{ data.Description }}
+        </p>
+      </div>
     </mat-dialog-content>
   </div>
 </div>
