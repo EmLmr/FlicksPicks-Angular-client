@@ -55,11 +55,12 @@ export class MovieCardComponent {
   }
 
   //open dialog to get genre info
-  openGenreDialog(gname: string, gdescription: string): void {
+  openGenreDialog(_id: string): void {
     this.dialog.open(GenreDialogComponent, {
+      panelClass: 'custom-dialog-container',
+      width: '50%',
       data: {
-        Gname: gname,
-        Gdescription: gdescription,
+        _id: _id,
       },
     });
   }

@@ -10,8 +10,18 @@
 
 <div class="genre-dialog-wrapper">
   <button mat-icon-button color="dark" [mat-dialog-close]="true">
-    <mat-icon class="close">close</mat-icon>
+    <mat-icon>close</mat-icon>
   </button>
-  <h2>{{ data.gname }}</h2>
-  <p>{{ data.gdescription }}</p>
+  <div id="main-content" *ngFor="let genre of genres">
+    <mat-dialog-content>
+      <h1 *ngIf="data._id == genre._id" class="dialog-title">
+        {{ genre.Gname }}
+      </h1>
+      <div>
+        <p *ngIf="data._id == genre._id" class="dialog-definition">
+          {{ genre.Gdescription }}
+        </p>
+      </div>
+    </mat-dialog-content>
+  </div>
 </div>

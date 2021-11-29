@@ -72,7 +72,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatIconModule,
   ],
-  providers: [],
+  providers: [MovieCardComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
